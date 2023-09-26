@@ -1,0 +1,33 @@
+1==>
+Create table: It is used to Create table that we can store some kinds of data in the form of rows and columns.
+
+Query: Create table tableName(
+    varible datatypes(size),
+    varible datatypes(size),
+    varible datatypes(size),
+    varible datatypes(size)
+);
+
+Note: if the datatypes is int then we dont need to specify the size of the varible.
+
+Exp:  create table students(
+    -> roll_number int,
+    -> name varchar(250),
+    -> email varchar(250),
+    -> phone varchar(250)
+    );
+-------------------------------------------------
+2==>
+Describe table: If you want to see the structure of the table we need to use Describe keyword.
+
+Query: Describe tableName;
+Exp Describe students;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| roll_number | int          | YES  |     | NULL    |       |
+| name        | varchar(250) | YES  |     | NULL    |       |
+| email       | varchar(250) | YES  |     | NULL    |       |
+| phone       | varchar(250) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+

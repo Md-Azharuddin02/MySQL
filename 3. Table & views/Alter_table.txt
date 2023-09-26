@@ -1,0 +1,101 @@
+Alter: Alter statement is used when you want to change the name of the table or any field of the talbe.
+
+Note: Alter is always used with add, drop, modify command according to the setuation.
+
+1==(i)>
+Add colomn: add colomn is used when we want to add more colomn into the table.
+
+Query: Alter table tableName
+        add new_new_columnName colomn_defination
+        [first | after colomnName];
+Exp:alter table students
+    -> add subjects varchar(250)
+    -> after phone;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| roll_number | int          | YES  |     | NULL    |       |
+| name        | varchar(250) | YES  |     | NULL    |       |
+| email       | varchar(250) | YES  |     | NULL    |       |
+| phone       | varchar(250) | YES  |     | NULL    |       |
+| subjects    | varchar(250) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+Note: Here first | after is optional which will help you to define where you want to add new colomn.
+
+------------------------------------------------------
+2==>(ii)
+Add multiple colomn at the same time.
+alter table students
+add name varchar(250),
+add email varchar(250),
+add phone varchar(15);
+
+alter table teacher
+    -> add name varchar(250),
+    -> add email varchar(250)
+    -> add phone varchar(250);
+
+------------------------------------------------------
+2==> modify: it is used to modify colomn datatype in the table and it can also change the position of the colomn using after and first keyword.
+
+Query: alter table tableName
+        modify colomnName datatype;
+EXp: alter table teacher
+    -> modify id varchar(250);
+    after email
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| name  | varchar(250) | YES  |     | NULL    |       |
+| email | varchar(250) | YES  |     | NULL    |       |
+| id    | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+------------------------------------------------------
+3==>
+drop colomn: it used to delelte the colomn from the table.
+Query: alter table tableName
+        drop colomn colomnName;
+
+Exp:  alter table teacher
+    -> drop column id;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| name  | varchar(250) | YES  |     | NULL    |       |
+| email | varchar(250) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+
+------------------------------------------------------
+4==>
+Rename colomnName: It is used to change the name of the colomn into a table.
+Query: alter table tableName
+        change colomn oldName newName datatype(size)
+        after|first(if you want to change the position of the colomn after update then use only after | first);
+
+Exp:alter table teacher
+    -> change column teacherName name varchar(300)
+    -> after email;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+ Before
+| teacherName | varchar(350) | YES  |     | NULL    |       |
+| email       | varchar(250) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+  After
+| email | varchar(250) | YES  |     | NULL    |       |
+| name  | varchar(300) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+
+5==> Rename table: It is used to change the name of any table into the database.
+Query: alter table tableName
+        Rename to newName;
+Exp: alter table teacher
+    -> rename to teachers;
++-------------------+
+| Tables_in_collage |
++-------------------+
+| students          |
+| teachers          |
++-------------------+

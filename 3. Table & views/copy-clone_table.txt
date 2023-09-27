@@ -1,0 +1,89 @@
+Clone/copy/dublicate table: it is used to copy a table along with their structure and data into the database.
+
+
+Note: it is mainly used to perfom some kinds of operation without effecting the actual data of the table.
+
+Note: it is alos used to store the data as a backup.
+
+1==> actual table:
+
+Query: create table tableName
+select */columnName from tableName;
+
+exp: create table student2
+select * from student;
++--------+------------------+
+| name   | email            |
++--------+------------------+
+| prince | prince@gmail.com |
+| sonu   | sonu@gmail.com   |
++--------+------------------+
+        OR 
+create table student2
+select name from student;
++--------+
+| name   |
++--------+
+| prince |
+| sonu   |
++--------+
+
+
+2==> temporary table
+Query: create temporary tableName
+select */columnName from tableName;
+
+create temporary tempTable
+select *from student;
++--------+------------------+
+| name   | email            |
++--------+------------------+
+| prince | prince@gmail.com |
+| sonu   | sonu@gmail.com   |
++--------+------------------+
+
+
+Another way to create a clone table:
+
+create new_table_name mytable like original_table_name
+exp: create table mytable like student;
+    insert into mytable
+    select *from student;
++--------+------------------+
+| name   | email            |
++--------+------------------+
+| prince | prince@gmail.com |
+| sonu   | sonu@gmail.com   |
++--------+------------------+
+
+
+----------- clone a table from another database:
+
+if you want to make a clone of the table from another database then it is possible to perfom the Query.
+
+Note: we will create a table first and then we will assign the value into that table;
+
+** create a table:
+Query:  create table destinationDB.tableName
+        like sourceDB.tableName;
+exp:create table mydb.mytable
+    -> like collage.student;
++----------------+
+| Tables_in_mydb |
++----------------+
+| mytable        |
+| newtable       |
++----------------+
+** insert the data into that table
+
+Query: insert into mydb.mytable 
+        select *from collage.student;
+exp:
++--------+------------------+
+| name   | email            |
++--------+------------------+
+| prince | prince@gmail.com |
+| sonu   | sonu@gmail.com   |
++--------+------------------+
+
+

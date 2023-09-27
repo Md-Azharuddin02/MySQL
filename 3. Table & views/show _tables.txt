@@ -1,0 +1,37 @@
+There are multiple method to show the table of a database;
+
+1==> select database and enter into that database by using "use databaseName". and then we can run bellow Query to show table of that database;
+
+Query: show tables;
+Exp: 
++-------------------+
+| Tables_in_collage |
++-------------------+
+| student           |
++-------------------+
+
+2==>
+ We can also show the tables without entering into the database by using their "IN and FROM" keyword ;
+
+
+==> By using In keyword
+
+Query: show tables in databaseName;
+Exp: show tables in collage;
++-------------------+
+| Tables_in_collage |
++-------------------+
+| student           |
++-------------------+
+
+==> By using FROM  keyword
+Query: show tables from databaseName;
+Exp: show tables from collage;
++-------------------+
+| Tables_in_collage |
++-------------------+
+| student           |
++-------------------+
+
+
+

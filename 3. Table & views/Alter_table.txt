@@ -3,11 +3,11 @@ Alter: Alter statement is used when you want to change the name of the table or 
 Note: Alter is always used with add, drop, modify command according to the setuation.
 
 1==(i)>
-Add colomn: add colomn is used when we want to add more colomn into the table.
+Add column: add column is used when we want to add more column into the table.
 
 Query: Alter table tableName
-        add new_new_columnName colomn_defination
-        [first | after colomnName];
+        add new_new_columnName column_defination
+        [first | after columnName];
 Exp:alter table students
     -> add subjects varchar(250)
     -> after phone;
@@ -20,11 +20,11 @@ Exp:alter table students
 | phone       | varchar(250) | YES  |     | NULL    |       |
 | subjects    | varchar(250) | YES  |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
-Note: Here first | after is optional which will help you to define where you want to add new colomn.
+Note: Here first | after is optional which will help you to define where you want to add new column.
 
 ------------------------------------------------------
 2==>(ii)
-Add multiple colomn at the same time.
+Add multiple column at the same time.
 alter table students
 add name varchar(250),
 add email varchar(250),
@@ -36,10 +36,10 @@ alter table teacher
     -> add phone varchar(250);
 
 ------------------------------------------------------
-2==> modify: it is used to modify colomn datatype in the table and it can also change the position of the colomn using after and first keyword.
+2==> modify: it is used to modify column datatype in the table and it can also change the position of the column using after and first keyword.
 
 Query: alter table tableName
-        modify colomnName datatype;
+        modify columnName datatype;
 EXp: alter table teacher
     -> modify id varchar(250);
     after email
@@ -52,9 +52,9 @@ EXp: alter table teacher
 +-------+--------------+------+-----+---------+-------+
 ------------------------------------------------------
 3==>
-drop colomn: it used to delelte the colomn from the table.
+drop column: it used to delelte the column from the table.
 Query: alter table tableName
-        drop colomn colomnName;
+        drop column columnName;
 
 Exp:  alter table teacher
     -> drop column id;
@@ -67,10 +67,10 @@ Exp:  alter table teacher
 
 ------------------------------------------------------
 4==>
-Rename colomnName: It is used to change the name of the colomn into a table.
+Rename columnName: It is used to change the name of the column into a table.
 Query: alter table tableName
-        change colomn oldName newName datatype(size)
-        after|first(if you want to change the position of the colomn after update then use only after | first);
+        change column oldName newName datatype(size)
+        after|first(if you want to change the position of the colmn after update then use only after | first);
 
 Exp:alter table teacher
     -> change column teacherName name varchar(300)

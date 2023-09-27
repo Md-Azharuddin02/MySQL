@@ -1,0 +1,6 @@
+Temporary table: Temporary table is used to store data on the Temporary basis. the data will be deleted after the sessaion will be closed.
+
+Note: Multiple user can access a Temporary table where as  normal table can only accessed by single user.
+
+Query: create temporary table tableName(columnname datatype(size));
+exp: create temporary table teacher(name varchar(250));

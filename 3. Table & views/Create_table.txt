@@ -18,10 +18,16 @@ Exp:  create table students(
     );
 -------------------------------------------------
 2==>
-Describe table: If you want to see the structure of the table we need to use Describe keyword.
+Describe/desc table: If you want to see the structure of the table we need to use Describe keyword.
 
-Query: Describe tableName;
+Query: Describe/desc tableName;
 Exp Describe students;
+
+Note: we also used another method to show talbe structure in the database.
+
+Query: show columns from tableName;
+Exp: show columns from students;
+
 +-------------+--------------+------+-----+---------+-------+
 | Field       | Type         | Null | Key | Default | Extra |
 +-------------+--------------+------+-----+---------+-------+
@@ -30,4 +36,27 @@ Exp Describe students;
 | email       | varchar(250) | YES  |     | NULL    |       |
 | phone       | varchar(250) | YES  |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
+
+Note II : if you want to see the structure in depth with their Privileges then we can use another method.
+
+Query: show full columns from tableName;
+Exp: show full columns from student;
++-------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| Field | Type         | Collation          | Null | Key | Default | Extra | Privileges                      | Comment |
++-------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| name  | varchar(250) | utf8mb4_0900_ai_ci | NO   | PRI | NULL    |       | select,insert,update,references |         |
+| email | varchar(250) | utf8mb4_0900_ai_ci | YES  |     | NULL    |       | select,insert,update,references |         |
++-------+--------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+
+
+Note III: There is another way to show structure of the table in depth without Privileges which is bellow mention.
+
+Query: Explain select * from tableName;
+Exp: Exp select * from student;
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table   | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | student | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    2 |   100.00 | NULL  |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+
 

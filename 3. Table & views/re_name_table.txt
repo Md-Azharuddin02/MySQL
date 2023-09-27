@@ -1,0 +1,48 @@
+There are mainly two ways to rename the tables into a database.
+
+1==> By using alter keyword:
+
+Query: alter table tablename
+        rename to newtablename;
+Exp: alter table management
+    -> rename to managements;
++-------------------+
+| Tables_in_collage |
++-------------------+
+| managements       |
+| students          |
+| teachers          |
++-------------------+
+
+2==> without using alter keyword:
+
+Query: rename table/tables old_table to new_table;
+(note we can use both table or tables).
+
+Exp: rename table/tables teacher to teachers;+-------------------+
+| Tables_in_collage |
++-------------------+
+| managements       |
+| students          |
+| teachers          |
++-------------------+
+
+3==> we can also  rename multiple table at the same time.
+
+Query:  rename table/tables
+        old_table to new_table,
+        old_table to new_table,
+        old_table to new_table;
+
+Exp:    rename table/tables
+        management to managements,
+        student to students,
+        teacher to teachers
++-------------------+
+| Tables_in_collage |
++-------------------+
+| managements       |
+| students          |
+| teachers          |
++-------------------+
+

@@ -1,0 +1,3 @@
+Truncate : Truncate is use to delete all the data from table in a database without deleting the structure of that table. 
+
+Note: it is DDL which is known as data defination language.

@@ -1,0 +1,8 @@
+Min(): it is use to find the minimum value in the data.
+
+select min(salary) as minsalary from mytable.
+
+
+Max(): it is use to find the maximum value in the data.
+
+select Max(salary) as maxsalary from mytable.

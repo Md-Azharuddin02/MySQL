@@ -1,0 +1,17 @@
+Limit clause: it will provid a limit to a table that how much data it can show in one search.
+
+select *from mytable limit 5;
+
+Note : you give limit more than data than it will return all data from the table.
+
+    Exp: if there are only 10 data into the table and you are giving limit 20. then i will return all 10 data from the datable.
+
+
+Note : if you want to get only 3 data from the table and those data should start from 3 to 7 then we can use 
+       ofset commnad
+
+       select *from mytable limit 3 ofset 4;(here data will start from 5. like 5,6.7)
+
+
+Note : we can also use where clause with limit clause.
+        select *from mytable where name='prince' limit 5;

@@ -1,0 +1,12 @@
+Order by clause : it is use to arrange data into ascending or descending Order.
+
+order by: it will automatically order into ascending order.
+        select * from mytable Order by asc;
+
+
+order by asc: it will order into ascending order.
+        select * from mytable Order by asc;
+
+
+order by desc: it will order into descending order.
+        select * from mytable Order by desc;

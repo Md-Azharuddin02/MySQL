@@ -1,0 +1,25 @@
+Where  clause : It is use to perform sql quairy with some kinds of condition.
+
+==: select *from mytable where id=1;
+
+!= or <> : select *from mytable where id != 1;
+
+< :  select * from mytable where salary < 40000;
+
+> :  select * from mytable where salary > 40000;
+
+<=:  < :  select * from mytable where salary <= 40000;
+
+
+>=:  < :  select * from mytable where salary >= 40000;
+
+AND: It is used if both condition(all condition) are true.
+        select *from mytable where name ='prince' and address ='Harsinghput';
+
+
+OR: It is used only one condition is true.
+        select *from mytable where name ='prince' or address ='Harsinghput';
+
+
+NOT: It is used if that particular data is not in the table.
+        select *from mytable where not name ='prince';
